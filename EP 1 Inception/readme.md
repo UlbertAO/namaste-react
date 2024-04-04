@@ -17,3 +17,6 @@ create app.js and put all react code there
 
 All frameworks and library work on some philosophy to optimise some expensive task
 react wanted to deal with most expensive operation that is happened on a application that is when dom is getting change and dom tree is re rendered at that time entire dom tree need to be created
+
+react can be applied in small portion of app independently
+it is not full fledged framework comes with all loads of things
