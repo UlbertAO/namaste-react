@@ -1,0 +1,18 @@
+{
+  "name": "prevproj",
+  "version": "1.0.0",
+  "description": "react proj by ulbert",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "namaste-react"
+  ],
+  "author": "ulbertao",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
