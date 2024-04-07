@@ -12,9 +12,34 @@ const heading = React.createElement(
 // React.createElement => obj =>render => html
 
 // jsx
-const jsxHeading = <h1 id="jsx">jsx heading</h1>;
+const jsxHeading = (
+  <h1 id="jsx" className="jsx" tabIndex="1">
+    jsx heading
+  </h1>
+);
 // babel(jsx=> react.createelement)=>obj=>render=>html
 console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxHeading);
+// root.render(jsxHeading);
+
+//react component
+// functional component
+const Title = () => {
+  return <h1>title goes here</h1>;
+};
+const HeadingComponent = () => {
+  return (
+    <div>
+      <Title />
+      <h1>functional componnet</h1>
+      <FooterComponent />
+    </div>
+  );
+};
+const FooterComponent = () => (
+  <h1 className="footer" tabIndex={1}>
+    footer functional componnet
+  </h1>
+);
+root.render(<HeadingComponent />);
