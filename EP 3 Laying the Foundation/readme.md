@@ -37,3 +37,23 @@ it convert jsx to react.createelement obj which will be rendered
 bable also supports old browser like es6 are not understood by them
 
 NOTE if we have to pass any attribute to jsx we need to use camelCase
+
+//react component
+what is it is is anything you see btn,heading, footer
+but in react there are 2:
+
+- class based component=>old way
+- functional component=> new way => it is a normal js function which returns jsx or react element
+
+NOTE name any component starting with capital
+
+since functional component is fn we render it this way
+
+> <HeadingComponent />
+
+component compotition means component inside another component just a jargon
+
+inside jsx if we write{} inside it we can write any piece of javascript expression
+
+since in jsx we can add custom js using {} that means crosssite scripting is possible but
+jsx takes care of it before executing it will sanitize it.

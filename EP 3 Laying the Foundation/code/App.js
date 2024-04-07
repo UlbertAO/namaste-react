@@ -25,15 +25,17 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //react component
 // functional component
-const Title = () => {
-  return <h1>title goes here</h1>;
-};
+const Title = <h1>title goes here</h1>;
+
 const HeadingComponent = () => {
   return (
     <div>
-      <Title />
+      {Title}
+      {console.log("asdasd")}
       <h1>functional componnet</h1>
       <FooterComponent />
+      <FooterComponent></FooterComponent>
+      {FooterComponent()}
     </div>
   );
 };
