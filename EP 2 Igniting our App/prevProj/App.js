@@ -1,3 +1,6 @@
+import React from "react"; // it will come from node_modules
+import ReactDOM from "react-dom/client";
+
 const heading = React.createElement(
   "h1",
   { id: "heading" },

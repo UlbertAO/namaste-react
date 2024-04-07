@@ -41,4 +41,50 @@ node_modules contains all the packages instelled by npm, actuall dependency in c
 
 parcel as a project has its own dependencies those deps known as transetive dependencies
 
-we do not put/push node_modules to production or github it can be regenerated again by package json
+## we do not put/push node_modules to production or github it can be regenerated again by package json
+
+to ignite our app
+
+> npx parcel index.html
+> index.html is our entypoint
+
+similar to npm we have npx
+npx means executing package
+
+parcel did so many things behind the scene
+
+since react is a package we can use npm to add react in our project and cdn should not be used
+
+> npm install react
+> npm install react-dom
+
+now coming back to parcel
+
+- dev build
+- local server
+- HMR =hot module replacement /hot reload
+- file watching algo (c++)
+- caching - faster build(.parcel-cache)
+- image optimization
+- minification
+- bundling
+- compressing
+- consistent hashing
+- code splitting
+- differential bundeling : support older browser
+- diagonastics
+- error handeling
+- host on https
+- tree shaking algo : remove unused code for us
+- different dev prod build
+
+## read parcel documentation
+
+for production build
+
+> npx parcel build index.html
+> if encoure error for entrypoint remove main from packagejson
+
+above cmd will create production ready code
+
+now we have made our own create-react-app
