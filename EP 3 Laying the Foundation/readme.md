@@ -1,6 +1,6 @@
 we run our application using cmd
 
-> npm parcel index.html
+> npx parcel index.html
 
 we will use npm scripts do do the same
 
@@ -39,7 +39,7 @@ bable also supports old browser like es6 are not understood by them
 NOTE if we have to pass any attribute to jsx we need to use camelCase
 
 //react component
-what is it is is anything you see btn,heading, footer
+what is it? it is anything you see btn,heading, footer
 but in react there are 2:
 
 - class based component=>old way
