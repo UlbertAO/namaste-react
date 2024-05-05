@@ -23,10 +23,14 @@ const Body = () => {
     );
   };
 
-  if (restaurantList.length === 0) {
-    return <Shimmer />;
-  }
-  return (
+  // conditional rendering
+  // if (restaurantList.length === 0) {
+  //   return <Shimmer />;
+  // }
+
+  return restaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div>
       <div className="search-bar">
         <input type="text" placeholder="Search" />

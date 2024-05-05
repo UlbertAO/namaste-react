@@ -21,9 +21,25 @@ useEffect(callbackFn,dependencyArr)
 in above code dependency array is empty and callback function is called when component render finished
 so here we can do things which we need to call after rendering
 
+CORS plugin to bypass cors issue
+
 call api using fetch resolve promise using
 then & catch
 or
 async await
 
 use optional chaining
+
+now we want to show loader when list of restaurants is empty
+
+why do we create state variable?
+why normal js variable wont work?
+
+- when we want our data to in sync with UI we need state variable
+- normal js variable will get updated but will not be rendered on UI hence not dynamic
+- when we are using normal js variable REACT wil not know when this variable is changed but in useState whenever set method is called then value is changed (diff is invoked and component is re rendered)
+
+WHOLE COMPONENT IS REDERED
+
+everytime is set method in usestate is invoked reconciliation process starts and component is re rended with updated object values
+with diff react knows exactly what to update in object
