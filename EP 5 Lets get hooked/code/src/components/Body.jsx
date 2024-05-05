@@ -3,6 +3,7 @@ import restaurants from "../utils/mockData";
 import { useState } from "react";
 
 const Body = () => {
+  const [restaurantList, setRestaurantList] = useState(restaurants);
   return (
     <div>
       <div className="search-bar">
@@ -15,12 +16,15 @@ const Body = () => {
           value="Top Rated"
           onClick={() => {
             console.log("btn clicked");
+            setRestaurantList(
+              restaurantList.filter((rest) => rest.info.avgRatingString < "4")
+            );
           }}
         />
       </div>
 
       <div className="restaurant-container">
-        {restaurants.map((restaurant) => {
+        {restaurantList.map((restaurant) => {
           return (
             <RestaurantCard
               key={restaurant.info.id}
