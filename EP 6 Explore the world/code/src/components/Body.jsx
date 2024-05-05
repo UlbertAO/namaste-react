@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 // import restaurants from "../utils/mockData";
 import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   // const [restaurantList, setRestaurantList] = useState(restaurants);
@@ -21,6 +22,10 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if (restaurantList.length === 0) {
+    return <Shimmer />;
+  }
   return (
     <div>
       <div className="search-bar">
