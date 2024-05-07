@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -22,12 +23,18 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo">NamasteFood</div>
+      <a href=".">
+        <div className="logo">NamasteFood</div>
+      </a>
       <div className="nav-items">
         <ul>
           <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <button
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");

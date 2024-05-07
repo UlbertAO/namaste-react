@@ -84,3 +84,33 @@ if / this path have any route error errorElement will be loaded
 
 hook is a function at the end of the day which have specific purpose
 react-router-dom provides a hook useRouteError -> gives more info about our error
+
+## keep header intact only body will keep changing according to the route
+
+need to know children routes to implement above scenario
+
+## children routes
+
+applayout will stay as it is we will create childrens of it
+to load other routs use Outlet component it is like container for children routes
+
+when there is any change in route outlet willl be filled with respective elements
+
+## link it on header
+
+we can use anchor tag with href to go to any page but it will refresh the page and load
+
+never ever use anchor to route
+
+in react we can navigate to other page without reloading the page using "Link" from react-router-dom
+
+<Link to="/contact">Contact Us</Link>
+
+it is not realoding pages, it is just loading other component
+
+this is known as single page application
+
+## there are 2 types of routing
+
+- client side routing: all the components are loaded in the start , it does not fetch any new page , here components get replaced
+- server side routing: when we navigate to certain page lets say /about , browser make request to server, fetches about.html and displays on browser here reloading happens
