@@ -6,21 +6,29 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   // const [restaurantList, setRestaurantList] = useState(restaurants);
   const [restaurantList, setRestaurantList] = useState([]);
+  const [restaurantListData, setRrestaurantListData] = useState([]);
+
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
+    // invoked onl
     console.log("useeffect called");
     fetchData();
   }, []);
 
   const fetchData = async () => {
+    console.log("fetchData called");
+
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
-    setRestaurantList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    const rastData =
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setRrestaurantListData(rastData);
+    setRestaurantList(rastData);
   };
 
   // conditional rendering
@@ -33,7 +41,26 @@ const Body = () => {
   ) : (
     <div>
       <div className="search-bar">
-        <input type="text" placeholder="Search" />
+        <input
+          type="text"
+          placeholder="Search"
+          value={searchValue}
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
+        />
+        <button
+          type="submit"
+          onClick={() => {
+            setRestaurantList(
+              restaurantListData.filter((rest) =>
+                rest.info.name.toLowerCase().includes(searchValue.toLowerCase())
+              )
+            );
+          }}
+        >
+          Submit
+        </button>
       </div>
       <div className="filters">
         <input
@@ -43,7 +70,9 @@ const Body = () => {
           onClick={() => {
             console.log("btn clicked");
             setRestaurantList(
-              restaurantList.filter((rest) => rest.info.avgRatingString < "4")
+              restaurantListData.filter(
+                (rest) => rest.info.avgRatingString < "4"
+              )
             );
           }}
         />

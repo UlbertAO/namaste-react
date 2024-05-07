@@ -18,7 +18,7 @@ useEffect(callbackFn,dependencyArr)
   }, []);
 ```
 
-in above code dependency array is empty and callback function is called when component render finished
+in above code dependency array is empty and callback function is called when component render finished only once
 so here we can do things which we need to call after rendering
 
 CORS plugin to bypass cors issue
@@ -43,3 +43,9 @@ WHOLE COMPONENT IS REDERED
 
 everytime is set method in usestate is invoked reconciliation process starts and component is re rended with updated object values
 with diff react knows exactly what to update in object
+
+search
+searchValue we used as useState cuz we want to bind it to value og input so whenever its value chages it is in sync with UI
+onchange is important cuz we need to update the new value of searchvalue everytime input is changed
+
+on each onchange we set new value to searchValue so page will be rerendered each time
